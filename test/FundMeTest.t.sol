@@ -21,7 +21,7 @@ contract FundMeTest is Test {
     }
 
     function testPriceFeedVersion() public {
-        uint256 version = fundMe.getVersion();
+        uint256 version = fundMe.s_priceFeed().version();
         assertEq(version, 4);
     }
 }
