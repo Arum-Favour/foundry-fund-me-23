@@ -4,7 +4,7 @@ pragma solidity ^0.8.19;
 
 import {Test, console} from "forge-std/Test.sol";
 import {FundMe} from "../src/FundMe.sol";
-import {DeployFundMee} from "../script/DeployFundMee.sol";
+import {DeployFundMee} from "../script/DeployFundMee.s.sol";
 
 contract FundMeTest is Test {
     FundMe fundMe;
@@ -20,7 +20,7 @@ contract FundMeTest is Test {
     }
 
     function testOwnerIsMsgSender() public view {
-        assertEq(fundMe.i_owner(), address(this));
+        assertEq(fundMe.i_owner(), msg.sender);
     }
 
     function testVersion() public view {
